@@ -1,0 +1,6 @@
+Model ; SP500; Bovespa; OMX
+ARMA-GJRGARCH; 0.5043; $\textbf{0.5255}^{*}$;0.5214
+LSTM; $\textbf{0.5188}$; 0.5146; 0.5244
+Deep LSTM; 0.5072; 0.5015; $0.5287^{*}$
+Softmax LSTM;0.5087; 0.5000; $0.5272^{*}$
+Softmax deep LSTM; 0.5087; 0.5000; $\textbf{0.5530}^{**}$
