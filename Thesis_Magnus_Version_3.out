@@ -1,0 +1,33 @@
+\BOOKMARK [1][-]{section*.2}{Glossary}{}% 1
+\BOOKMARK [1][-]{section*.3}{Abbreviations}{}% 2
+\BOOKMARK [1][-]{section.1}{1. Introduction}{}% 3
+\BOOKMARK [2][-]{subsection.1.1}{1.1. Artificial neural networks}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.2}{1.2. Neural networks within finance}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.3}{1.3. Purpose}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.4}{1.4. Some related research}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.5}{1.5. Thesis outline}{section.1}% 8
+\BOOKMARK [1][-]{section.2}{2. Financial theory}{}% 9
+\BOOKMARK [2][-]{subsection.2.1}{2.1. Stylized facts of univariate return series}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.2}{2.2. Efficient market hypothesis}{section.2}% 11
+\BOOKMARK [1][-]{section.3}{3. Mathematical background}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{3.1. Universal approximation theorem}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.2}{3.2. Single-layer feedforward networks}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.3}{3.3. Multi-layer feedforward networks}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.4}{3.4. Network training}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.5}{3.5. Regularization}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.6}{3.6. Recurrent networks}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.7}{3.7. Time series models}{section.3}% 19
+\BOOKMARK [1][-]{section.4}{4. Empirics}{}% 20
+\BOOKMARK [2][-]{subsection.4.1}{4.1. Methodology}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.2}{4.2. Data}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.3}{4.3. Network models}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.4}{4.4. Time series model}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.5}{4.5. Results}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.6}{4.6. Forecast evaluation}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.7}{4.7. Trading strategy evaluation}{section.4}% 27
+\BOOKMARK [1][-]{section.5}{5. Discussion}{}% 28
+\BOOKMARK [1][-]{section.6}{6. Conclusion}{}% 29
+\BOOKMARK [1][-]{section.7}{7. References}{}% 30
+\BOOKMARK [1][-]{section.8}{8. Appendix}{}% 31
+\BOOKMARK [2][-]{subsection.8.1}{8.1. Numerical packages}{section.8}% 32
+\BOOKMARK [2][-]{subsection.8.2}{8.2. Regression residuals}{section.8}% 33
