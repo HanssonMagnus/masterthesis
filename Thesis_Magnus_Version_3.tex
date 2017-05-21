@@ -115,7 +115,7 @@ Prof. Birger Nilsson
 \\
 
 \noindent
-\textbf{LSTM network} $\cdots$ A network structure which identifies autoregressive properties in the data.
+\textbf{LSTM network} $\cdots$ A recurrent network structure which identifies autoregressive properties in the data of arbitrary length.
 \\
 
 \noindent
@@ -131,7 +131,7 @@ Prof. Birger Nilsson
 \\
 
 \noindent
-\textbf{Recurrent neural network} $\cdots$ A network structure which is different from a feedforward structure. Data is reprocessed by the layers within the network.
+\textbf{Recurrent neural network} $\cdots$ This network structure is different from a feedforward structure. Data is reprocessed by the hidden layers within the network.
 \\
 
 \noindent
@@ -192,7 +192,7 @@ In this thesis forecasting of financial returns series will be investigated thro
 From here on the terms artificial neural network, neural network, neural net, ANN, NN, network etcetera will be used interchangeably.
 
 \subsection{Artificial neural networks}
-Artificial neural networks had its name from mathematicians trying to build a model mimicking the neural activity in a brain. In 1943 a quite famous article named \textit{A Logical Calculus of the Ideas Immanent in Nervous Activity} was written. The article discussed the first properties that were later to be coined as a \textit{artificial neural network}. In 1962, Rosenblatt presented single layer neural networks with threshold activation functions\footnote{An activation function is wrapped around each node (neuron) in the network, $g(\cdot)$ in equation (3) is an example of this.}. These are essentially feedforward neural networks which will be explained later (section 3.2 and 3.3), however they use a specific activation function. During this time neural networks where interesting from a biological and mathematical perspective, but had little practical use since computing power was expensive and unavailable. This led to advancements in the mathematical theory of neural nets. One of the interesting discoveries was the \textit{universal approximation theorem} proven by (e.g.) Cybenko (1989). Cybenko proved that a single hidden layer neural network, given the sigmoid activation function, could approximate any continuous function arbitrary well. This result is quite restrictive since the sigmoid function is assumed. Hornik (1991) was able to prove the theorem for an arbitrary bounded activation function.
+Artificial neural networks had its name from mathematicians trying to build a model mimicking the neural activity in a brain. In 1943 a quite famous article named \textit{A Logical Calculus of the Ideas Immanent in Nervous Activity} was written. The article discussed the first properties that were later to be coined as an \textit{artificial neural network}. In 1962, Rosenblatt presented single layer neural networks with threshold activation functions\footnote{An activation function is wrapped around each node (neuron) in the network, $g(\cdot)$ in equation (3) is an example of this.}. These are essentially feedforward neural networks which will be explained later (section 3.2 and 3.3), however they use a specific activation function. During this time neural networks where interesting from a biological and mathematical perspective, but had little practical use since computing power was expensive and unavailable. This led to advancements in the mathematical theory of neural nets. One of the interesting discoveries was the \textit{universal approximation theorem} proven by (e.g.) Cybenko (1989). Cybenko proved that a single hidden layer neural network, given the sigmoid activation function, could approximate any continuous function arbitrary well. This result was quite restrictive since the sigmoid function was assumed. Hornik (1991) was able to prove the theorem for an arbitrary bounded activation function.
 \\
 
 
@@ -233,7 +233,7 @@ Enke (2005) uses a feedforward neural network model together with a data mining\
 Because accurately predicting stock market returns is challenging a more simple binary classification method is often used. This is called \textit{direction of change forecasting}, and tries to predict the direction of the market rather than the direction and magnitude. An interesting paper is Christoffersen et al. (2006) where they investigate the link between sign forecasting and the conditional variance, mean, skewness and kurtosis\footnote{Christoffersen et al. (2006) investigates direction of change forecasting based on conditional variance, mean, skewness and kurtosis. They verify that higher order moments are an important factor for sign forecasting. This is an interesting result since neural networks take all factors concerning the empirical distribution into account. The more unusual relationships not described by regular models the better is the relative performance of a NN.}. More often are papers investigating the volatility of market returns which is easier to predict. For example see Mantri, Gahan \& Nayak 2010 and Hu \& Tsoukalas 1999.
 
 \subsubsection{Thesis positioning}
-There are little research done on forecasting of stock market returns and its direction of change using long short-term memory (LSTM) recurrent neural networks. Although, LSTM's has been around since 1997 they have recently become popular because of the new AI wave, and the availability of programming interfaces that can handle them. In this thesis two different LSTM models, with two different activation functions, yielding four different models are used on three different datasets which exhibits different market characteristics. Thus, the experiment will yield interdisciplinary results regarding classic financial empirics, such as application of the efficient market hypothesis (section 2.2) and advanced modern machine learning.
+There are little research done on forecasting of stock market returns and its direction of change using long short-term memory (LSTM) recurrent neural networks. Although, LSTM's have been around since 1997 they have recently become popular because of the new AI wave, and the availability of programming interfaces that can handle them. In this thesis two different LSTM models, with two different activation functions, yielding four different models are used on three different datasets which exhibits different market characteristics. Thus, the experiment will yield interdisciplinary results regarding classic financial empirics, such as application of the efficient market hypothesis (section 2.2) and advanced modern machine learning.
 
 \subsection{Thesis outline}
 Section 2 covers some financial theory needed for the empirical analysis. Section 3 discusses the mathematical concepts which are in the core of the neural network models and some time series econometrics. Section 4 describes the empirical experiment and show its results. In section 5 the results are discussed and in section 6 some final conclusions are drawn.
@@ -261,7 +261,7 @@ When looking at the study of empirical finance and more specifically empirical f
 When modeling financial returns one has to take into account the distributional characteristics of the data. Fitting financial return data under a normal i.i.d.\footnote{Independent and identically distributed.} assumption is usually not best practice. Taking into account the autoregressive properties of the underlying error variance is usually good practice. Hence, this is highly important when choosing time series models representing the data. However, when modeling data using neural nets one does not need to take any distributional assumptions into account, given that the practitioner knowns how to analyze the output. This is due to the general way in which a neural net learns the empirical distribution of the training data.
 
 \subsection{Efficient market hypothesis}
-The EMH argues that markets are efficient, which means that all available information is reflected in the prices of assets. The issues of predicting prices and the EMH has been widely researched. Martin Sewell refers back to the mathematicians of Italy in the 16th century (Martin Sewell 2011). If one does not look back quite as long, but rather to the 1970's, a classical paper written by Eugene Fama is found. He defines a market with respect to some information set to be efficient if the prices fully reflects that information set (Fama 1970).
+The EMH argues that markets are efficient, which means that all available information is reflected in the prices of assets. The issues of predicting prices and the EMH has been widely researched. Martin Sewell refers back to the mathematicians of Italy in the $16^{th}$ century (Martin Sewell 2011). If one does not look back quite as long, but rather to the 1970's, a classical paper written by Eugene Fama is found. He defines a market with respect to some information set to be efficient if the prices fully reflects that information set (Fama 1970).
 \\
 
 Looking at Roberts (1967), we see three different types of efficiencies: weak, semistrong and strong. These are defined with respect to the information set, where the weak form refers to an information set which consists of historical data. The semistrong form of efficiency refers to the information set including all public information. In the definition of the strong form of market efficiency the information set consists of all information known to any market participant. Thus, this thesis is concerned with the \textit{weak} form of the EMH.
@@ -320,7 +320,7 @@ equation $(3)$ becomes a classifier of the type \textit{Perceptron}. If $g(\cdot
 Depending on how the activation function, which wraps the linear expression, is defined, the network is given different characteristics. This gives an intuition behind the generality of neural networks.
 
 \subsubsection{Drawbacks of a single-layer network}
-Considering a classification problem of two classes, a single-layer neural network can only classify data sets which are linearly separable. This means that one, in $two$-dimensions, can draw a line between the classes. This problem is usually illustrated with the \textit{XOR} example\footnote{Imagine a two-dimensional plane where the points $x_1 = (0,1)$ and $x_2 = (1,0)$ are categorized by class 1, $\mathbf{C_1}$. Likewise, the points $y_1=(0,0)$ and $y_2=(1,1)$ are categorized by class 2, $\mathbf{C_2}$. Then there are no line separating the two classes.}. The limitation of a single-layer network can also be exemplified given a regression example, in which the dimensionality of the linear expression inside the activation function is a restriction. In general, single-layer neural networks are not used in practice, but used to illustrate the concept of NN. 
+Considering a classification problem of two classes, a single-layer neural network can only classify data sets which are linearly separable. This means that one, in $two$-dimensions, can draw a line between the classes. This problem is usually illustrated with the \textit{XOR} example\footnote{Imagine a two-dimensional plane where the points $x_1 = (0,1)$ and $x_2 = (1,0)$ are categorized by class 1, $\mathbf{C_1}$. Likewise, the points $y_1=(0,0)$ and $y_2=(1,1)$ are categorized by class 2, $\mathbf{C_2}$. Then there is no line separating the two classes.}. The limitation of a single-layer network can also be exemplified given a regression example, in which the dimensionality of the linear expression inside the activation function is a restriction. In general, single-layer neural networks are not used in practice, but used to illustrate the concept of NN. 
 
 
 \subsection{Multi-layer feedforward networks}
@@ -336,12 +336,12 @@ where,
 a_j = \sum_{i=0}^D w_{ij}^{(1)} x_i
 \end{equation}
 
-One can identify that the structure is the same as the single-layer network. One can also identify that equation (5) is in fact equal to equation (1) in the universal approximation theorem (section 3.1), given that $h$ is linear. Furthermore, the general difference from a single layer network is that the output of the inner layer network is again multiplied by a new weight vector and again wrapped in an activation function. Notice that the output from the first layer is usually non-linear, meaning that the more layers the network consist of the more complex becomes the output.
+One can identify that the structure is the same as the single-layer network. One can also identify that equation (5) is in fact equal to equation (1) in the universal approximation theorem (section 3.1), given that $h$ is linear. Furthermore, the general difference from a single layer network is that the output of the inner layer is again multiplied by a new weight vector and again wrapped in an activation function. Notice that the output from the first layer is usually non-linear, meaning that the more layers the network consist of the more complex becomes the output.
 \\
 
 \textit{Figure 1} illustrates a network with two layers, where one is hidden. $x_i$ is the input data, $z_j = g(a_j)$ is the hidden nodes, and $y_k$ is the output. Hence, there are two layers of adaptive weights that will be optimized, these are represented by the lines.
 
-\begin{figure}%[H]
+\begin{figure}[h]%[H]
 \caption{Network graph for one hidden layer network.}
 \centering
 \includegraphics[scale=0.8]{Network.png}
@@ -506,14 +506,14 @@ The empirical methodology is divided into four parts,
 \\
 
 \begin{itemize}  
-\item Regression. Predicting 1-day ahead market returns.
-\item Classification with simple network model. Predict 1-day ahead direction of market returns.
-\item Classification with sophisticated network model. Predict 1-day ahead direction of market returns.
+\item Regression with LSTM network models. Predicting 1-day ahead market returns.
+\item Classification with simple LSTM network models. Predict 1-day ahead direction of market returns.
+\item Classification with sophisticated LSTM network models. Predict 1-day ahead direction of market returns.
 \item Construction of two trading strategies.
 \end{itemize}
 \vspace{0.5cm}
 
-As discussed, forecasting financial returns is nothing easy. Thus one might not expect grand results from a forecasting model with simple regression approach, as is in step 1. However, one idea would be to use the predictions of the forecasting models to classify only the direction of the market returns. In the second part of the methodology a simple model is established, which wraps a \textit{sign}-function \footnote{$g(R) = 
+As discussed, forecasting financial returns is nothing easy. Thus one might not expect grand results from a forecasting model with simple regression approach, as is in step 1. However, one idea would be to use the predictions of the forecasting models to classify only the direction of the market returns, \textit{direction of change forecasting}. In the second part of the methodology a simple model is established, which wraps a \textit{sign}-function \footnote{$g(R) = 
      \begin{cases}
        \ \ 1 \ \text{if} \ R > 0 \\
        -1 \ \text{otherwise} \\ 
@@ -539,7 +539,7 @@ In order to investigate the predictability of the American, Brazilian and Swedis
 where daily adjusted closing prices are imported and transformed into logarithmic returns. Due to reproducibility, simplicity and overall promotion of open data, the adjusted closing price are imported from Yahoo!'s finance database. \textit{Figure 2} shows a visualization of the return series of the indices together with histograms for each series. Table 1 and 2 shows a summary of the logarithmic returns, which will be analyzed.
 \\
 
-\begin{table}%[H]
+\begin{table}[h]%[H]
 \centering
 \caption{Summary of logarithmic returns (S\&P 500, Bovespa, OMX).}
 \csvautotabular[separator=semicolon]{summary.csv}
@@ -547,13 +547,13 @@ where daily adjusted closing prices are imported and transformed into logarithmi
 
 Normally distributed data is symmetric around the mean, hence the skewness parameter is 0. The skewness parameters for the S\&P 500 index and the OMX index are negative, this means longer negative tails. The skewness parameter for the Bovespa index is positive implying longer positive tail. The kurtosis of each series exceeds 3, indicating excess kurtosis compared to the normal distribution. This is in accordance with the $3^{rd}$ stylized fact in section 2.1, i.e. \textit{heavy tails}.
 
-\begin{table}%[H]
+\begin{table}[h]%[H]
 \centering
 \caption{Standard deviation and standardized moments of logarithmic returns (S\&P 500, Bovespa, OMX).}
 \csvautotabular[separator=semicolon]{summary2.csv}
 \end{table}
 
-\begin{figure}%[H]
+\begin{figure}[h]%[H]
 \caption{Histograms \& plots of return series (S\&P 500, Bovespa, OMX).}
 \centering
 \includegraphics[scale=1]{data2.png}
@@ -587,7 +587,7 @@ So, which comparison model is suitable? Arguably one which is rather general but
 \textit{Figure 3} shows the out of sample predictions of the time series model for each index respectively. By visually investigating the predictions there seems to be higher variance in the predictions of the OMX index compared to the other two series. Although the structure of the predictions are similar, where the model is operating around the mean.
 \\
 
-\begin{figure}%[H]
+\begin{figure}[h]%[H]
 \caption{Forecasts with ARMA-GJRGARCH (S\&P 500, Bovespa, OMX). Black indicates the predictions and grey indicates the true returns.}
 \centering
 \includegraphics[scale=1]{garch_pred2.png}
@@ -596,7 +596,7 @@ So, which comparison model is suitable? Arguably one which is rather general but
 \textit{Figure 4} looks very similar to \textit{figure 3}, but there are some interesting differences. When predicting S\&P 500 the LSTM model seems to have captured the two volatility clusters in the middle of the series better. Although, one cannot say that better capturing the variance necessarily leads to better forecast of the series. Also, the variance of the OMX prediction seems to be uniform with the other predictions, hence not much more volatile as in \textit{figure 3}.
 \\
 
-\begin{figure}%[H]
+\begin{figure}[h]%[H]
 \caption{Predictions from LSTM (S\&P 500, Bovespa, OMX).}
 \centering
 \includegraphics[scale=1]{lstm_pred2.png}
@@ -605,7 +605,7 @@ So, which comparison model is suitable? Arguably one which is rather general but
 \textit{Figure 5} is more similar to \textit{figure 4} than \textit{figure 3}. It captures the volatility clusters of the S\&P series as the simple LSTM model. However, the predictions seems to be extremely close the mean.
 \\
 
-\begin{figure}%[H]
+\begin{figure}[h]%[H]
 \caption{Predictions from deep lstm (S\&P 500, Bovespa, OMX).}
 \centering
 \includegraphics[scale=1]{lstm_deep_pred2.png}
@@ -616,7 +616,7 @@ Furthermore, \textit{figure 6} and 7 are representing the two dimensional output
 
 Looking at the figures (6 and 7) one can see that both the LSTM and deep LSTM classifiers always predict positive returns for the S\&P 500 series. This is also true for the deep LSTM model regarding the Bovespa index. Both models are showing a highly non-linear pattern regarding the predictions of the OMX index.
 
-\begin{figure}%[H]
+\begin{figure}[h]%[H]
 \caption{LSTM forecast output. Black indicates $\mathbf{P}(R>0)$. Grey indicates $1 - \mathbf{P}(R>0)$.}
 \centering
 \includegraphics[scale=1]{lstm_prob2.png}
@@ -625,7 +625,7 @@ Looking at the figures (6 and 7) one can see that both the LSTM and deep LSTM cl
 	\end{tablenotes}
 \end{figure}
 
-\begin{figure}%[H]
+\begin{figure}[h]%[H]
 \caption{Deep LSTM forecast output. Black indicates $\mathbf{P}(R>0)$. Grey indicates $1 - \mathbf{P}(R>0)$.}
 \centering
 \includegraphics[scale=1]{lstm_deep_prob2.png}
@@ -634,9 +634,9 @@ Looking at the figures (6 and 7) one can see that both the LSTM and deep LSTM cl
 \subsection{Forecast evaluation}
 The regression predictions of the three models looks quite similar. All models have heavily generalized the parameters in order to perform good out of sample predictions and not over-fit to the training dataset. Table 3 shows the sum of squared residuals for each model and each dataset.\footnote{Plots of the residuals are found in the appendix.} The sum of squared residuals are very similar for the models, although the time series model have the lowest sum of squared residuals for the S\&P 500 index.
 
-\begin{table}%[H]
+\begin{table}[h]%[H]
 \centering
-\caption{Sum of squared residuals from regression.}
+\caption{Sum of squared residuals from regressions.}
 \csvautotabular[separator=semicolon]{sumofsquared.csv}
 \end{table}
 
@@ -646,7 +646,7 @@ Recall figures 3, 4 and 5, where the forecasts of the indices are shown. The mag
 Table 4 shows the percentage of correct directional predictions of all models. This includes the time series model, LSTM model and the deep LSTM model where a sign function is wrapped around the regression output. It also includes the softmax LSTM and the softmax deep LSTM which produce classification output. The bold numbers are the highest correct percentage for each dataset and significant scores of the binomial test are shown with (*) and (**).
 \\
 
-\begin{table}%[H]
+\begin{table}[h]%[H]
 \centering
 \caption{Directional prediction (percentage correct).}
 \csvautotabular[separator=semicolon]{TableOfCorrect.csv}
@@ -664,21 +664,24 @@ First note that all models on all datasets are predicting the correct direction 
 The two trading strategies discussed in section 4.1 will be evaluated using the classification prediction, on the out of sample data, from the softmax deep LSTM model and the ARMA-GJRGARCH model. For each index three portfolios will be presented. The first which is the index, i.e. if one buys the index and holds it. The second portfolio will represent the first trading strategy which consists of buying the index when the model predict positive outcomes and staying out of the market when negative returns are predicted. The third portfolio represent the second trading strategy, in which one buys the index when the models predict positive returns and shorts the index when the models predict negative returns. Each portfolio will be based on the starting value of $1$ unit of a given currency.
 \\
 
-\begin{figure}%[H]
+\begin{figure}[h]%[H]
 \caption{Softmax deep LSTM trading strategy.}
 \centering
 \includegraphics[scale=1]{strategy.png}
 \end{figure}
-\textit{Figure 8} shows, for each index, the outcomes of the trading strategies based on the softmax deep LSTM model. Recall figure 6, where the probability output of the model is shown. Here one can see that the predictions of positive returns for the S\&P 500 index and the Bovespa index are always greater than 0.50. This indicates that the two trading strategies will be identical to these indices. The reason for this is that both strategies buys the index then the model predict positive returns, and if the model always predict positive returns then the strategy always buys index. However, looking at the OMX predictions of figure 6, one can see higher dynamics. This clearly shows when the trading strategies are evaluated on the OMX data. Here the first strategy performs around 50\% better than index and the second strategy performs over 100\% better than index. Remember that the out-of-sample data is $33\%$ of the dataset, e.g. the testing data for the OMX index consists of $700$ daily observations.
+
+\textit{Figure 8} shows, for each index, the outcomes of the trading strategies based on the softmax deep LSTM model. Recall \textit{figure 7}, where the probability output of the model is shown. Here one can see that the predictions of positive returns for the S\&P 500 index and the Bovespa index are always greater than 0.50. This indicates that the two trading strategies will be identical to these indices. The reason for this is that both strategies buys the index then the model predict positive returns, and if the model always predict positive returns then the strategy always buys index. However, looking at the OMX predictions of \textit{figure 7}, one can see higher dynamics. This clearly shows when the trading strategies are evaluated on the OMX data. Here the first strategy performs around 50\% better than index and the second strategy performs over 100\% better than index. Remember that the out-of-sample data is $33\%$ of the dataset, e.g. the testing data for the OMX index consists of $700$ daily observations.
 \\
 
 \textit{Figure 9} has the exact same structure as \textit{figure 8}, the difference is that the ARMA-GJRGARCH model is used in the strategies. The results are unfortunately not as good as the network model. For the S\&P 500 index both strategies perform worse than the index using the time series model. For the Brazilian Bovespa index the second strategy performs worse at the end of the period, although it did perform very well during the first part. The first strategy did outperform the index in the first part but, ended up with the same result in the end. Regarding the OMX index the strategies did worse than the index in the beginning but outperform the index when looking at the total period.
 
-\begin{figure}%[H]
+\begin{figure}[h]%[H]
 \caption{ARMA-GJRGARCH trading strategy.}
 \centering
 \includegraphics[scale=1]{strategyGARCH.png}
 \end{figure}
+
+\newpage
 
 \section{Discussion}
 \begin{itemize}
@@ -695,7 +698,7 @@ With regards to the magnitude of the regression forecasts of the indices there s
 \end{itemize}
 \vspace{0.5cm}
 
-The network models were not able to predict the direction of the S\&P 500 or Bovespa index with significant result, but three out of four network models did significant predictions on the Swedish OMX index. There is no way of understanding exactly why a neural network model acts the way it does since the parameter space is simply too large. What one can understand is that the network model trains on a dataset, tries to generalize the training, and then predict on an out of sample set. One thought would be that the OMX data has the most similarities between the training and test data. This might not be visually understood since e.g. the S\&P 500 series in figure 1 seems to be the most simple looking. Nevertheless, the results show that the direction of the Swedish market seems to be predictable, whereas the direction of the American and the Brazilian seems not to.
+The network models were not able to predict the direction of the S\&P 500 or Bovespa index with significant result, but three out of four network models did significant predictions on the Swedish OMX index. There is no way of understanding exactly why a neural network model acts the way it does since the parameter space is simply too large. What one can understand is that the network model trains on a dataset, tries to generalize the training, and then predict on an out of sample set. One thought would be that the OMX data has the most similarities between the training and test data. Nevertheless, the results show that the direction of the Swedish market seems to be predictable, whereas the direction of the American and the Brazilian seems not to.
 \\
 
 \begin{itemize}
@@ -711,12 +714,12 @@ The simple answer is yes. All the results show that the sequential modeling of a
 \end{itemize}
 \vspace{0.5cm}
 
-A trading strategy based on the regression forecasts would not be advisable. However, a trading strategy based on the directional analysis of a softmax LSTM network might be advisable. As seen in figure 7 the outcomes of the trading strategies are atleast as good as each index. Especially good is the performance on the Swedish market, where the strategies outperforms the market with around 50\% and 100\% respectively. This is of course a spectacular result, which was achieved by consistently better than average prediction and compounding effects over 700 days. As mentioned, the only thing one can be completely sure of is that the model, regarding the OMX index, was able to generalize a pattern that was applicable on the out of sample data. This does not mean that the strategy will work in the future. However, there might be a structure to the smaller Swedish market allowing the model to make these predictions and this needs to be further investigated.
+A trading strategy based on the regression forecasts would not be advisable. However, a trading strategy based on the directional analysis of a softmax LSTM network might be advisable. As seen in figure 8 the outcomes of the trading strategies are atleast as good as each index. Especially good is the performance on the Swedish market, where the strategies outperforms the market with around 50\% and 100\% respectively. This is of course a spectacular result, which was achieved by consistently better than average prediction and compounding effects over 700 days. As mentioned, the only thing one can be completely sure of is that the model, regarding the OMX index, was able to generalize a pattern that was applicable on the out of sample data. This does not mean that the strategy will work in the future. However, there might be a structure to the smaller Swedish market allowing the model to make these predictions and this needs to be further investigated.
 \\
 
 Regarding building a real world trading strategy much more testing would of course be needed. An empirical model specification test would be necessary, where a lot more than two models is tested. In order to improve the model one would want to evaluate and potentially add other input variables, other than exclusively historical returns. Other input variables could be economic indicators such as inflation or other financial data such as exchange rates or other stock market data.
 
-\section{Conclusion}
+\section{Concluding remarks}
 In this thesis it has been shown how LSTM neural networks can be used in order to predict financial returns series, both with a regression approach and a classification approach. It seems to be possible to predict the directions of the Swedish stock market, while it seems not to be possible to predict the US and Brazilian stock market directions. This suggests that the weak form of the efficient market hypothesis does not hold for the Swedish market, while it holds for the US and the Brazilian markets.
 \\
 

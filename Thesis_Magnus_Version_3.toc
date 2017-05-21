@@ -16,30 +16,30 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{3.2.1}{Drawbacks of a single-layer network}}{12}{subsubsection.3.2.1}
 \contentsline {subsection}{\tocsubsection {}{3.3}{Multi-layer feedforward networks}}{12}{subsection.3.3}
 \contentsline {subsection}{\tocsubsection {}{3.4}{Network training}}{13}{subsection.3.4}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.4.1}{General derivation of backpropagation}}{14}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.4.1}{General derivation of backpropagation}}{13}{subsubsection.3.4.1}
 \contentsline {subsubsection}{\tocsubsubsection {}{3.4.2}{Gradient descent}}{15}{subsubsection.3.4.2}
 \contentsline {subsection}{\tocsubsection {}{3.5}{Regularization}}{16}{subsection.3.5}
 \contentsline {subsection}{\tocsubsection {}{3.6}{Recurrent networks}}{16}{subsection.3.6}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.6.1}{Long short-term memory}}{16}{subsubsection.3.6.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.6.1}{Long short-term memory}}{17}{subsubsection.3.6.1}
 \contentsline {subsection}{\tocsubsection {}{3.7}{Time series models}}{18}{subsection.3.7}
 \contentsline {subsubsection}{\tocsubsubsection {}{3.7.1}{ARMA}}{18}{subsubsection.3.7.1}
 \contentsline {subsubsection}{\tocsubsubsection {}{3.7.2}{GJRGARCH}}{18}{subsubsection.3.7.2}
-\contentsline {section}{\tocsection {}{4}{Empirics}}{18}{section.4}
+\contentsline {section}{\tocsection {}{4}{Empirics}}{19}{section.4}
 \contentsline {subsection}{\tocsubsection {}{4.1}{Methodology}}{19}{subsection.4.1}
 \contentsline {subsection}{\tocsubsection {}{4.2}{Data}}{20}{subsection.4.2}
-\contentsline {subsection}{\tocsubsection {}{4.3}{Network models}}{20}{subsection.4.3}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.3.1}{Single layer LSTM model}}{21}{subsubsection.4.3.1}
+\contentsline {subsection}{\tocsubsection {}{4.3}{Network models}}{21}{subsection.4.3}
+\contentsline {subsubsection}{\tocsubsubsection {}{4.3.1}{Single layer LSTM model}}{22}{subsubsection.4.3.1}
 \contentsline {subsubsection}{\tocsubsubsection {}{4.3.2}{Deep LSTM model}}{22}{subsubsection.4.3.2}
 \contentsline {subsection}{\tocsubsection {}{4.4}{Time series model}}{22}{subsection.4.4}
 \contentsline {subsection}{\tocsubsection {}{4.5}{Results}}{22}{subsection.4.5}
 \contentsline {subsection}{\tocsubsection {}{4.6}{Forecast evaluation}}{24}{subsection.4.6}
 \contentsline {subsection}{\tocsubsection {}{4.7}{Trading strategy evaluation}}{27}{subsection.4.7}
-\contentsline {section}{\tocsection {}{5}{Discussion}}{29}{section.5}
-\contentsline {section}{\tocsection {}{6}{Conclusion}}{31}{section.6}
-\contentsline {section}{\tocsection {}{7}{References}}{32}{section.7}
-\contentsline {section}{\tocsection {}{8}{Appendix}}{35}{section.8}
-\contentsline {subsection}{\tocsubsection {}{8.1}{Numerical packages}}{35}{subsection.8.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{8.1.1}{Tensorflow \& Keras}}{35}{subsubsection.8.1.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{8.1.2}{Rugarch package}}{35}{subsubsection.8.1.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{8.1.3}{NetworkX}}{35}{subsubsection.8.1.3}
-\contentsline {subsection}{\tocsubsection {}{8.2}{Regression residuals}}{35}{subsection.8.2}
+\contentsline {section}{\tocsection {}{5}{Discussion}}{30}{section.5}
+\contentsline {section}{\tocsection {}{6}{Concluding remarks}}{31}{section.6}
+\contentsline {section}{\tocsection {}{7}{References}}{33}{section.7}
+\contentsline {section}{\tocsection {}{8}{Appendix}}{36}{section.8}
+\contentsline {subsection}{\tocsubsection {}{8.1}{Numerical packages}}{36}{subsection.8.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{8.1.1}{Tensorflow \& Keras}}{36}{subsubsection.8.1.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{8.1.2}{Rugarch package}}{36}{subsubsection.8.1.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{8.1.3}{NetworkX}}{36}{subsubsection.8.1.3}
+\contentsline {subsection}{\tocsubsection {}{8.2}{Regression residuals}}{36}{subsection.8.2}
